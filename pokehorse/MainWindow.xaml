@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:pokehorse"
         mc:Ignorable="d"
         Title="MainWindow" Height="625" Width="825">
-    <Grid Height="600" Width="800">
+    <Grid Height="600" Width="800" ShowGridLines="True">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="200"/>
             <ColumnDefinition Width="400"/>
@@ -26,7 +26,7 @@
         <Canvas Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3">
             <Rectangle Name="pokerectange0" Height="100"
                        Width="100" Fill="Black" Canvas.Top="200"
-                       Canvas.Left=" 150"/>
+                       Canvas.Left=" 300"/>
             <Rectangle Name="pokerectange1" Height="100"
                        Width="100" Fill="Blue" Canvas.Top="50"
                        Canvas.Left=" 100"/>

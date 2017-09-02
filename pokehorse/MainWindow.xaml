@@ -6,32 +6,68 @@
         xmlns:local="clr-namespace:pokehorse"
         mc:Ignorable="d"
         Title="MainWindow" Height="625" Width="825">
-    <Grid Height="600" Width="800" ShowGridLines="True">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="200"/>
-            <ColumnDefinition Width="400"/>
-            <ColumnDefinition Width="200"/>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="400"/>
-            <RowDefinition Height="200"/>
+
+
+        <Grid Height="600" Width="800" Background="Black">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="400"/>
+                <ColumnDefinition Width="200"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="300"/>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="100"/>
         </Grid.RowDefinitions>
 
-        <Button Name="raceButton" Content="Race!" 
-                Grid.Column="2" Grid.Row="1"
+            <Button Name="raceButton" Content="Race!" 
+                Grid.Column="1" Grid.Row="2"
                 Height="40" Width="100" 
                 HorizontalAlignment="Center" 
                 Click="raceButton_Click"/>
-        
-        <Canvas Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3">
-            <Rectangle Name="pokerectange0" Height="100"
-                       Width="100" Fill="Black" Canvas.Top="200"
-                       Canvas.Left=" 300"/>
-            <Rectangle Name="pokerectange1" Height="100"
-                       Width="100" Fill="Blue" Canvas.Top="50"
+
+            <Border Height="625" Width="825" Grid.ColumnSpan="3">
+                <Border.Style>
+                    <Style TargetType="{x:Type Border}">
+                        <Style.Triggers>
+                            <EventTrigger RoutedEvent="Loaded">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <RectAnimation Storyboard.TargetProperty="Background.(ImageBrush.Viewport)"
+                                    To="-1,1,1,1" RepeatBehavior="Forever" />
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Border.Style>
+                <Border.Background>
+                    <ImageBrush
+                ImageSource="http://www.gravatar.com/avatar/3736a467816b5100e6bac91847cae8b6?s=128&amp;d=identicon&amp;r=PG"
+                Viewport="0,1,1,1" TileMode="Tile" />
+                </Border.Background>
+                <Canvas Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3">
+                    <Rectangle Name="pokerectange0" Height="100"
+                       Width="100" Fill="Black" Canvas.Top="10"
                        Canvas.Left=" 100"/>
-        </Canvas>
+                    <Rectangle Name="pokerectange1" Height="100"
+                       Width="100" Fill="Gray" Canvas.Top="40"
+                       Canvas.Left=" 100"/>
+                <Rectangle Name="pokerectange2" Height="100"
+                       Width="100" Fill="Red" Canvas.Top="70"
+                       Canvas.Left=" 100"/>
+                <Rectangle Name="pokerectange3" Height="100"
+                       Width="100" Fill="Blue" Canvas.Top="100"
+                       Canvas.Left=" 100"/>
+                <Rectangle Name="pokerectange4" Height="100"
+                       Width="100" Fill="Orange" Canvas.Top="130"
+                       Canvas.Left=" 100"/>
+                <Rectangle Name="pokerectange5" Height="100"
+                       Width="100" Fill="Yellow" Canvas.Top="160"
+                       Canvas.Left=" 100"/>
+            </Canvas>
+            </Border>
 
+        </Grid>
 
-    </Grid>
 </Window>
